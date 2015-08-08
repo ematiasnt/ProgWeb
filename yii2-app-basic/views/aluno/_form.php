@@ -16,14 +16,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-     <?= $form->field($model, 'sexo')->textInput(['maxlength' => true]) ?> 
+     <?= $form->field($model, 'sexo')->dropDownList(['M' =>'Masculino','F' =>'Feminino']) ?> 
 
-    <?= $form->field($model, 'id_curso')->textInput() ?>
+    <?= $form->field($model, 'id_curso')->dropDownList(['1' =>'Ciência da Computação','2' =>'Sistemas de Informação','3' =>'Engenharia da Computação']) ?>
 
     <?= $form->field($model, 'ano_ingresso')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Criar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -96,10 +96,10 @@ class SiteController extends Controller
     {
 		
 		$data = date("d/ F /Y H:i:s l e ");
-		
-        return $this->render('about',['teste' => $data]);
+		$num = 3 ;
+        return $this->render('about',['teste' => $data, 'num' => $num]);
     }
-	public function actionAluno($id) 
+	public function actionTurma($id) 
 	{
 		return $this->render('aluno');
 	}
