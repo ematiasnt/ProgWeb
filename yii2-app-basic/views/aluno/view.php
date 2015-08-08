@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Remover', ['delete', 'id' => $model->id], [
+        <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Tem certeza de que deseja excluir este item?',
@@ -24,6 +24,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+	 	
+	 
+	 
 	 
 	 
 
@@ -38,8 +41,5 @@ $this->params['breadcrumbs'][] = $this->title;
             'ano_ingresso',
         ],
     ]) ?>
-	
-	<h3 >Em nossa base, existem <?= $models ?> alunos de <?= $model->ano_ingresso ?>.</h3>
-	<!-- Alunos::find()->where('ano_ingresso=1999')->count(); -->
 
 </div>

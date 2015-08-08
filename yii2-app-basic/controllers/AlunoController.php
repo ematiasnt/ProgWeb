@@ -36,24 +36,10 @@ class AlunoController extends Controller
     {
         $searchModel = new AlunoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		
+
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider, 
-        ]);
-    }
-	public function actionTurma()
-    {
-		//$aluno = aluno::findOne($id);
-		//$curso = $aluno->curso->nome;
-		
-		//$num = Yii::$app->request->queryParams;
-        $searchModel = new AlunoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		
-        return $this->render('turma', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider, 
+            'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -64,23 +50,14 @@ class AlunoController extends Controller
      */
     public function actionView($id)
     {
-		$teste = $this->findModel($id);
-		
-		
-		$models = new Aluno();
-		$models->loadDefaultValues();
-		$models = aluno::find()->where(['ano_ingresso' => $teste->ano_ingresso])->count();
-	    return $this->render('view', [
-            'model' => $teste ,'models' => $models
-        ]);
-    }
-	    public function actionView1($id){
+			
+		  //$searchModel = new CursoSearch();
+        //$dataProvider = $searchModel->search($id->id_curso);
+		  //$nodel->id_curso = $dataProvider->sigla;
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
-	
-	
 
     /**
      * Creates a new aluno model.
@@ -90,13 +67,12 @@ class AlunoController extends Controller
     public function actionCreate()
     {
         $model = new aluno();
-		//$array_cursos = ArrayHelper::map(CursoSearch::find()->all(),['id','nome']);
-		
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,/*'array_cursos' => $array_cursos,*/
+                'model' => $model,
             ]);
         }
     }

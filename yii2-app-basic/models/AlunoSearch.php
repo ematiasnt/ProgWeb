@@ -18,11 +18,7 @@ class AlunoSearch extends aluno
     public function rules()
     {
         return [
-            ['id', 'integer'],
-
-            ['matricula', 'integer','message'=>'A Matricula tem que ser um inteiro'],
-			['id_curso', 'integer','message'=>'O Curso tem que ser um inteiro'],
-			['ano_ingresso', 'integer','message'=>'O Ano de Ingresso tem que ser um número inteiro.'],
+            [['id', 'matricula', 'id_curso', 'ano_ingresso'], 'integer'],
             [['nome', 'sexo'], 'safe'],
         ];
     }

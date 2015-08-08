@@ -11,16 +11,25 @@ use yii\widgets\ActiveForm;
 <div class="aluno-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['turma'],
+        'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
+    <?= $form->field($model, 'id') ?>
 
-    <?php  echo $form->field($model, 'ano_ingresso') ?>
+    <?= $form->field($model, 'matricula') ?>
+
+    <?= $form->field($model, 'nome') ?>
+
+    <?= $form->field($model, 'sexo') ?>
+
+    <?= $form->field($model, 'id_curso') ?>
+
+    <?php // echo $form->field($model, 'ano_ingresso') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Limpar', ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
