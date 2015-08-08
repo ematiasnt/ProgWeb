@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Página Instituto de Computação -->
+<html>
+<head>
+<meta charset=utf-8/>
+<title>Instituto de Computação</title>
+<link rel="stylesheet" type="text/css" href="ex_js.css">
+<script language="javascript">
+	var likes=0;
+function lk() {
+	return likes = likes + 1;
+}
+
+function myLikes() {
+    var x = document.getElementById("fried2").rows[0].cells;
+    x[0].innerHTML = lk();
+}
+
+function myComents() {
+    var table = document.getElementById("coments");
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+	cell1.setAttribute("colspan",2);
+	cell1.style.backgroundColor = "#"+((1<<24)*Math.random()|0).toString(16);
+	var cmnt = document.getElementById("comentario").value;
+    cell1.innerHTML = cmnt;
+	document.getElementById("comentario").value ="";
+}
+</script>
+</head>
+<body>
+
+<table>
+<tbody id="fried">
+<tr>
+<td><img src="nietzsche.jpg" class="nie"></td>
+<td style="text-align:left; padding:10px" ><h1>Friedrich Nietzsch</h1></td>
+</tr>
+</table>
+<p>Eu jamais iria para a fogueira por uma opinião minha, afinal, não tenho certeza alguma. Porém, eu iria pelo direito de ter e mudar de opinião, quantas vezes eu quisesse.</p>
+
+<table style="width:100%" border="0" id="coments">
+<tr>
+<td colspan=2>
+<font class="coment">Comentários:</font>
+</td>
+</tr>
+<tr>
+<td colspan=2 style="background-color:gray;">
+Apenas um teste
+</td>
+</tr>
+<tr>
+<td style="width:45px">
+<textarea id="comentario" rows="4" cols="40"></textarea>
+</td>
+<td style="vertical-align:text-top;">
+<button id="coment" style="vertical-align:text-top;" onclick="myComents()">Comentário</butto>
+</td>
+</tr>
+</body>
+</html>

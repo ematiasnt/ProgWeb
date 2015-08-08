@@ -1,0 +1,23 @@
+.nie {
+	width:115px;
+	height:144px;
+}
+
+.coment{ 
+	font-size: 18pt !important;
+	font-family: arial,sans-serif !important;
+	
+}
+
+h1 {
+	font-family:arial,tahoma,helvetica,sans-serif;
+	font-weight: bold;
+	color: black;
+	font-size: 15pt
+}
+
+p{
+	font-size: 15pt;
+	font-family: arial,sans-serif;
+	text-align: justify;
+}
